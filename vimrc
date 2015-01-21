@@ -42,7 +42,13 @@ Bundle 'javacomplete'
 Bundle 'Compile'
 Bundle 'Conque-Shell'
 Bundle 'majutsushi/tagbar'
-Bundle 'YouCompleteMe'
+
+Bundle 'tpope/vim-surround'
+Bundle 'klen/python-mode'
+Bundle 'townk/vim-autoclose'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle 'fisadev/fisa-vim-colorscheme'
+"Bundle 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -55,6 +61,7 @@ endtry
 
 set background=dark
 filetype plugin on
+filetype indent on
 syntax on
 
 " autosettings
@@ -81,9 +88,9 @@ endif
 set hlsearch
 set number
 set tabstop=4
-set wrap
+"set wrap
 set autoindent
-set backspace=indent,eol,start
+"set backspace=indent,eol,start
 set ls=2
 set wildmode=list:longest
 set incsearch
@@ -139,15 +146,51 @@ setlocal omnifunc=javacomplete#Complete
 autocmd filetype java inoremap <buffer> . .<c-x><c-o><c-p>
 
 "Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{syntasticstatuslineflag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{syntasticstatuslineflag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list=1
+"let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
+let g:syntastic_enable_signs=0
+nmap <leader>e :Errors<CR>
 
 "tagbar 
 map <f4> :TagbarToggle<cr>
 let g:Tagbar_AutoFocus=1
+
+"Autoclose
+let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
+
+let g:pymode_lint_on_write=0
+let g:pymode_lint_signs=0
+let g:pymode_folding=0
+let g:pymode_rope=0
+
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup=1
+"let g:neocomplcache_enable_ignore_case=1
+let g:neocomplcache_enable_smart_case=0
+let g:neocomplcache_enable_auto_select=0
+"let g:neocomplcache_enable_fuzzy_completion=1
+"let g:neocomplcache_enable_underbar_completion=1
+"let g:neocomplcache_fuzzy_completion_start_lenght=1
+"let g:neocomplcache_auto_completion_start_length=1
+"let g:neocomplcache_manual_completion_start_length=1
+"let g:neocomplcache_min_keyword_length=1
+let g:neocomplcache_min_syntax_length=3
+let g:neocomplcache_same_filetype_lists={}
+let g:neocomplcache_same_filetype_lists._='_'
+
+"if &term =~? 'mlterm\|xterm|xterm-256|screen-256'
+    "let &t_Co = 256
+    "colorscheme fisa
+"else
+    "colorscheme delek
+"endif
+
+"if has('gui_running')
+    "colorscheme wombat
+"endif
