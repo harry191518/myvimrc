@@ -38,7 +38,7 @@ Bundle 'FuzzyFinder'
 
 "Bundle 'autocomplpop'
 Bundle 'Auto-Pairs'
-Bundle 'Syntastic'
+"Bundle 'Syntastic'
 Bundle 'javacomplete'
 Bundle 'Compile'
 Bundle 'Conque-Shell'
@@ -170,17 +170,16 @@ let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 "let g:pymode_folding=0
 "let g:pymode_rope=0
 
-let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup=1
-"let g:neocomplcache_enable_ignore_case=1
+let g:neocomplcache_enable_ignore_case=1
 let g:neocomplcache_enable_smart_case=0
 let g:neocomplcache_enable_auto_select=0
-"let g:neocomplcache_enable_fuzzy_completion=1
-"let g:neocomplcache_enable_underbar_completion=1
-"let g:neocomplcache_fuzzy_completion_start_lenght=1
-"let g:neocomplcache_auto_completion_start_length=1
-"let g:neocomplcache_manual_completion_start_length=1
-"let g:neocomplcache_min_keyword_length=1
-let g:neocomplcache_min_syntax_length=3
+let g:neocomplcache_enable_fuzzy_completion=0
+let g:neocomplcache_enable_underbar_completion=0
+let g:neocomplcache_fuzzy_completion_start_lenght=10
+let g:neocomplcache_auto_completion_start_length=10
+let g:neocomplcache_manual_completion_start_length=10
+let g:neocomplcache_min_keyword_length=3
+let g:neocomplcache_min_syntax_length=5
 let g:neocomplcache_same_filetype_lists={}
 let g:neocomplcache_same_filetype_lists._='_'
